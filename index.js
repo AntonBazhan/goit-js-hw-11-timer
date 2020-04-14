@@ -16,12 +16,8 @@ class CountdownTimer {
   setInt = setInterval(() => {
     const nowDate = Date.now();
     const time = this.targetDate - nowDate;
-    if (time < 0) {
-      clearInterval(this.setInt);
-      refs.timerFace.textContent = "Finich";
-      return;
-    }
     this.updateClockface(time);
+this.timeFinish(time);
   }, 1000);
 
   updateClockface(time) {
@@ -40,8 +36,14 @@ class CountdownTimer {
   pad(value) {
     return String(value).padStart(2, "0");
   }
-}
+  timeFinish(time) {
+    if (time < 0) {
+      clearInterval(this.setInt);
+      refs.timerFace.textContent = "Finish";
+    }
+  }
+};
 new CountdownTimer({
   selector: "#timer-1",
-  targetDate: new Date("May 31, 2020"),
+  targetDate: new Date("Apr 15,0:51 2020"),
 });
