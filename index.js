@@ -45,5 +45,5 @@ this.timeFinish(time);
 };
 new CountdownTimer({
   selector: "#timer-1",
-  targetDate: new Date("Apr 15,0:51 2020"),
+  targetDate: new Date("May 15, 2020"),
 });
